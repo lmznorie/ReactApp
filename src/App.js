@@ -1,34 +1,38 @@
-import React, { useState } from 'react';
-import MyComponent from './MyComponet'
+//const React = require('reat') es la version antigua al uso de import
+import React, { useState } from 'react'
+//import { render } from 'react-dom'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  const [ count, setCount ] = useState(0)
+const App = () => {
+    //const [name, setname] = useState('BigBoss')
+    const [contador, setContador] = useState(0)
 
-  const addMount = () => {
-    setCount(count+1)
-  } 
+    const sumar = () => {
+        setContador(contador+1)
+    }
 
-  const removeMount = () => {
-    setCount(count-1)
-  } 
+    const restar = () => {
+        setContador(contador-1)
+    }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <MyComponent name="Johan"/>
-        <button onClick={addMount}>
-          +
-        </button>
-        <button onClick={removeMount}>
-          -
-        </button>
-        <h1>{count}</h1>
-      </header>
-    </div>
-  );
+    return(
+        
+        <div className="App">
+            <div className="App-header">
+                <div>BigBoss</div>
+                <img src={logo} className="App-logo"></img>
+                <div>{contador}</div>
+                <button onClick={sumar}>
+                    SUMAR
+                </button>
+                <button onClick={restar}>
+                    RESTAR
+                </button>
+            </div>
+
+        </div>
+    )
 }
 
-export default App;
+export default App
